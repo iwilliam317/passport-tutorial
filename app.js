@@ -27,3 +27,6 @@ if(!isProduction) {
   app.use(errorHandler());
 }
 
+//Configure Mongoose
+mongoose.connect('mongodb://localhost/passport-tutorial');
+mongoose.set('debug', true);
