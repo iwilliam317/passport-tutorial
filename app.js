@@ -55,3 +55,5 @@ app.use((err, req, res) => {
     },
   });
 });
+
+app.listen(3000, () => console.log('Server is running!'));
