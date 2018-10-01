@@ -27,6 +27,15 @@ UsersSchema.methods.generateJWT = function() {
     email: this.email,
     id: this._id,
     exp: parseInt(expirationDate.getTime() / 1000, 10),
-  }, 'secret');
+  }, 'mysecret');
 }
 
+UsersSchema.methods.toAuthJSON = function() {
+  return {
+    _id: this._id,
+    email: this.email,
+    token: this.generateJWT(),
+  };
+};
+
+mongoose.model('Users', UsersSchema);
