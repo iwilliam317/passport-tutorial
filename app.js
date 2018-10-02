@@ -31,6 +31,9 @@ if(!isProduction) {
 mongoose.connect('mongodb://localhost/passport-tutorial');
 mongoose.set('debug', true);
 
+// Models
+require('./models/User');
+
 //Error handlers & middlewares
 if(!isProduction) {
   app.use((err, req, res) => {
